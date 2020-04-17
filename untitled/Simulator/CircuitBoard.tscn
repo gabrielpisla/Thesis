@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Simulator/Battery.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Simulator/Resistor.tscn" type="PackedScene" id=2]
+
+[node name="CircuitBoard" type="Node"]
+
+[node name="Background" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -4.0
+margin_top = 1.0
+margin_right = -4.0
+margin_bottom = 1.0
+color = Color( 0, 0.211765, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Resistor" parent="." instance=ExtResource( 2 )]
+position = Vector2( 165, 93 )
+
+[node name="Collider" parent="Resistor/RestTerminalOne" index="0"]
+position = Vector2( -10, -12 )
+
+[node name="Collider" parent="Resistor/RestTerminalTwo" index="0"]
+position = Vector2( -10, 12 )
+
+[node name="Battery" parent="." instance=ExtResource( 1 )]
+position = Vector2( 127, 93 )
+
+[node name="Collider" parent="Battery/BattTerminalOne" index="0"]
+position = Vector2( 11, -12 )
+
+[node name="Collider" parent="Battery/BattTerminalTwo" index="0"]
+position = Vector2( 11, 12 )
+
+[editable path="Resistor"]
+
+[editable path="Battery"]
