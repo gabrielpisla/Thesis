@@ -48,7 +48,7 @@ func update_animation(input_vector):
 			elif input_vector.y > 0:
 				spriteAnimator.play("Walk (Front)")
 		elif input_vector.x != 0:
-			sprite.scale.x = sign(input_vector.x) * 0.362
+			sprite.scale.x = sign(input_vector.x) * 0.724
 			spriteAnimator.play("Walk (Right)")
 	else:
 		if input_vector_hist.x > 0:
